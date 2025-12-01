@@ -1,0 +1,16 @@
+{
+  "name": "cloudship-api",
+  "version": "1.0.0",
+  "description": "Node.js/Express API for The Cloudship Enterprise.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1",
+    "dotenv": "^16.4.5"
+  }
+}
