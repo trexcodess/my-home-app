@@ -13,6 +13,6 @@ RUN npm install -g serve           # Install 'serve' globally if you want to use
 WORKDIR /app
 COPY --from=builder /app/dist ./dist # <-- **CHANGED: Copy from 'builder' stage, '/app/dist' to './dist'**
 
-EXPOSE 3000                        # Or whatever port 'serve' uses (default 3000)
-CMD ["serve", "-s", "dist", "-l", "3000"] # Command to start your application
+EXPOSE 8080                       # Or whatever port 'serve' uses (default 3000)
+CMD ["serve", "-s", "dist", "-l", "$PORT"]# Command to start your application
 
