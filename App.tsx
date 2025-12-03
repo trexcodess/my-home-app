@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Ticket, Globe, Zap, Cpu, MapPin, Menu, X, Calendar, ArrowRight, Share2, Shield, Radio, Wind, Rocket, Cloud, Code, Database, Lock } from 'lucide-react';
+import { Ticket, Globe, Zap, Cpu, MapPin, Menu, X, Calendar, ArrowRight, Share2, Shield, Radio, Wind, Rocket, Cloud, Code, Database, Lock, TrendingUp, DollarSign, Target } from 'lucide-react';
 import FluidBackground from './components/FluidBackground';
 import GradientText from './components/GlitchText';
 import CustomCursor from './components/CustomCursor';
 import ArtistCard from './components/ArtistCard';
 import AIChat from './components/AIChat';
 import { Artist } from './types';
+
 // Keep your existing image imports here
 import Latitude from './src/assets/images/latitude.png'
 import AfroImage5 from './src/assets/images/Afro_City_5.jpg'
@@ -75,9 +76,16 @@ const App: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Artist | null>(null);
   
-  // Lead Gen State
+  // Lead Gen State (Original Boarding)
   const [email, setEmail] = useState('');
   const [submissionState, setSubmissionState] = useState<'idle' | 'loading' | 'success'>('idle');
+  
+  // NEW MLP Lead Gen State
+  const [mlpEmail, setMlpEmail] = useState('');
+  const [mlpWebsite, setMlpWebsite] = useState('');
+  const [mlpCompanyType, setMlpCompanyType] = useState('');
+  const [mlpSubmissionState, setMlpSubmissionState] = useState<'idle' | 'loading' | 'success'>('idle');
+
 
   // Handle keyboard navigation for modal
   useEffect(() => {
@@ -101,6 +109,24 @@ const App: React.FC = () => {
     setTimeout(() => {
       setSubmissionState('success');
       setEmail('');
+    }, 2000);
+  };
+  
+  // NEW: MLP Lead Gen Handler
+  const handleMlpLeadGenSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!mlpEmail || !mlpWebsite || !mlpCompanyType) return;
+    
+    setMlpSubmissionState('loading');
+    
+    // Simulate API call - In a real app, send data: { email: mlpEmail, website: mlpWebsite, type: mlpCompanyType }
+    console.log(`MLP Lead: ${mlpEmail}, ${mlpWebsite}, ${mlpCompanyType}`); 
+    
+    setTimeout(() => {
+      setMlpSubmissionState('success');
+      setMlpEmail('');
+      setMlpWebsite('');
+      setMlpCompanyType('');
     }, 2000);
   };
 
@@ -145,7 +171,7 @@ const App: React.FC = () => {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-10 text-sm font-bold tracking-widest uppercase">
-          {['Innovations', 'About Us', 'Opportunities', 'Boarding'].map((item) => ( // Added 'Opportunities'
+          {['Innovations', 'The MLP', 'About Us', 'Boarding'].map((item) => ( // Changed 'Opportunities' to 'The MLP' for clarity
             <button 
               key={item} 
               onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
@@ -182,7 +208,7 @@ const App: React.FC = () => {
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 z-30 bg-[#0a0a1a]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
           >
-            {['Innovations', 'About Us', 'Opportunities', 'Boarding'].map((item) => ( // Added 'Opportunities'
+            {['Innovations', 'The MLP', 'About Us', 'Boarding'].map((item) => ( // Changed 'Opportunities' to 'The MLP' for clarity
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
@@ -217,7 +243,7 @@ const App: React.FC = () => {
             <span>Technology for Ascension</span>
           </motion.div>
 
-          {/* Main Title */}
+           {/* Main Title */}
           <div className="relative w-full flex justify-center items-center flex-col">
             <h1 className="text-3xl md:text-5xl font-heading font-bold tracking-widest text-white mb-2">THE</h1>
             <GradientText 
@@ -225,21 +251,21 @@ const App: React.FC = () => {
               as="h1" 
               className="text-[12vw] md:text-[11vw] leading-[0.9] font-black tracking-tighter text-center" 
             />
-             <h1 className="text-3xl md:text-5xl font-heading font-bold tracking-widest text-white mt-2">ENTERPRISE</h1>
-            {/* Holographic Orb */}
+              <h1 className="text-3xl md:text-5xl font-heading font-bold tracking-widest text-white mt-2">ENTERPRISE</h1>
+             {/* Holographic Orb */}
             <motion.div 
-               className="absolute -z-20 w-[40vw] h-[40vw] bg-[#00e5ff]/10 blur-[80px] rounded-full pointer-events-none will-change-transform"
-               animate={{ scale: [0.9, 1.1, 0.9], opacity: [0.2, 0.4, 0.2] }}
-               transition={{ duration: 8, repeat: Infinity }}
-               style={{ transform: 'translateZ(0)' }}
+                className="absolute -z-20 w-[40vw] h-[40vw] bg-[#00e5ff]/10 blur-[80px] rounded-full pointer-events-none will-change-transform"
+                animate={{ scale: [0.9, 1.1, 0.9], opacity: [0.2, 0.4, 0.2] }}
+                transition={{ duration: 8, repeat: Infinity }}
+                style={{ transform: 'translateZ(0)' }}
             />
           </div>
           
           <motion.div
-             initial={{ scaleX: 0 }}
-             animate={{ scaleX: 1 }}
-             transition={{ duration: 1.5, delay: 0.5, ease: "circOut" }}
-             className="w-full max-w-md h-px bg-gradient-to-r from-transparent via-[#00e5ff]/50 to-transparent mt-4 md:mt-8 mb-6 md:mb-8"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1.5, delay: 0.5, ease: "circOut" }}
+              className="w-full max-w-md h-px bg-gradient-to-r from-transparent via-[#00e5ff]/50 to-transparent mt-4 md:mt-8 mb-6 md:mb-8"
           />
 
           <motion.p
@@ -248,8 +274,8 @@ const App: React.FC = () => {
             transition={{ delay: 0.8, duration: 1 }}
             className="text-base md:text-2xl font-light max-w-xl mx-auto text-white/90 leading-relaxed drop-shadow-lg px-4"
           >
-            Navigating the currents of innovation. <br/>
-            <span className="text-[#00e5ff]">Building a future where technology elevates the soul.</span>
+             Navigating the currents of innovation. <br/>
+             <span className="text-[#00e5ff]">Building a future where technology elevates the soul.</span>
           </motion.p>
         </motion.div>
 
@@ -280,14 +306,14 @@ const App: React.FC = () => {
         <div className="max-w-[1600px] mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16 px-4">
              <h2 className="text-5xl md:text-8xl font-heading font-bold uppercase leading-[0.9] drop-shadow-lg break-words w-full md:w-auto">
-              Ship <br/> 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-[#d946ef]">Modules</span>
-            </h2>
-            <div className="mt-8 md:mt-0 max-w-md text-right">
-              <p className="text-gray-300">
-                Our technology stack is designed to empower communities and harmonize with the planet.
-              </p>
-            </div>
+               Ship <br/> 
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-[#d946ef]">Modules</span>
+             </h2>
+             <div className="mt-8 md:mt-0 max-w-md text-right">
+               <p className="text-gray-300">
+                 Our technology stack is designed to empower communities and harmonize with the planet.
+               </p>
+             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/10 bg-black/40 backdrop-blur-sm">
@@ -297,6 +323,147 @@ const App: React.FC = () => {
           </div>
         </div>
       </section>
+      
+      {/* --- NEW MLP LEAD GENERATION SECTION --- */}
+      <section id="the-mlp" className="relative z-10 py-20 md:py-32 bg-[#0a0a1a] border-t border-[#d946ef]/20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-start">
+            
+            {/* Value Proposition Side */}
+            <div className="lg:col-span-7">
+              <h2 className="text-5xl md:text-7xl font-heading font-bold mb-4 leading-tight">
+                Stop Guessing. <br/> 
+                <GradientText text="Start Growing." className="text-6xl md:text-8xl" />
+              </h2>
+              <p className="text-xl text-gray-200 mb-8 font-light leading-relaxed max-w-xl">
+                Get Your **Minimum Loveable Position (MLP) SEO Strategy** in 7 Days. The lean, hyper-focused protocol to find the fastest path to high-value organic traffic.
+              </p>
+              
+              <div className="space-y-6">
+                {[
+                  { icon: Target, title: 'Hyper-Targeted Keywords', desc: 'Identify your 3 most profitable keywords to attract customers that convert, not just visitors. Eliminate the keyword noise.' },
+                  { icon: Calendar, title: '90-Day Quick-Win Content Plan', desc: 'A prioritized list of content gaps for immediate ranking improvements and traffic boosts.' },
+                  { icon: TrendingUp, title: 'Competitor Opportunity Map', desc: 'See exactly where your top 3 competitors are winning traffic and how to efficiently outrank them.' },
+                  { icon: Cpu, title: 'Simplified Technical Health Score', desc: 'A prioritized checklist of technical issues costing you rankings, tailored for non-developers.' },
+                ].map((feature, i) => (
+                  <div key={i} className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                    <feature.icon className="w-6 h-6 text-[#00e5ff] shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-lg font-bold font-heading text-white mb-1">{feature.title}</h4>
+                      <p className="text-sm text-gray-300">{feature.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Social Proof Placeholder */}
+              <div className="mt-12">
+                <p className="text-sm text-gray-500 font-mono uppercase tracking-widest mb-4">Trusted by Market Builders</p>
+                <div className="flex flex-wrap gap-6 opacity-60">
+                  {/* Replace with real client logos if available */}
+                  <DollarSign className="w-8 h-8 text-white/50" />
+                  <Code className="w-8 h-8 text-white/50" />
+                  <Database className="w-8 h-8 text-white/50" />
+                </div>
+              </div>
+            </div>
+            
+            {/* Form Side */}
+            <div className="lg:col-span-5 relative w-full">
+              <div className="sticky top-28 bg-[#0a0a1a] border border-[#d946ef]/50 p-8 md:p-10 rounded-2xl shadow-[0_0_50px_rgba(217,70,239,0.2)]">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">Secure Your Free MLP Strategy Session</h3>
+                <p className="text-gray-400 mb-8">This complimentary review is valued at $1,500. Due to demand, we can only accept a limited number of applications each month.</p>
+                
+                {mlpSubmissionState === 'success' ? (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex flex-col items-center justify-center py-10 text-center"
+                  >
+                    <div className="w-20 h-20 rounded-full bg-[#d946ef]/20 flex items-center justify-center mb-6">
+                      <Rocket className="w-10 h-10 text-[#d946ef]" />
+                    </div>
+                    <h3 className="text-2xl font-bold font-heading text-white mb-2">MLP Application Received!</h3>
+                    <p className="text-gray-400">Our analysts are reviewing your site. Check your email for next steps within 48 hours.</p>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleMlpLeadGenSubmit} className="flex flex-col gap-6">
+                    <div>
+                      <label htmlFor="mlpEmail" className="block text-xs font-mono text-white/70 uppercase tracking-widest mb-2">
+                        Work Email
+                      </label>
+                      <input 
+                        type="email" 
+                        id="mlpEmail"
+                        required
+                        value={mlpEmail}
+                        onChange={(e) => setMlpEmail(e.target.value)}
+                        className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white placeholder-white/20 focus:outline-none focus:border-[#00e5ff] transition-colors"
+                        placeholder="marketer@yourcompany.com"
+                        disabled={mlpSubmissionState === 'loading'}
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="mlpWebsite" className="block text-xs font-mono text-white/70 uppercase tracking-widest mb-2">
+                        Company Website URL
+                      </label>
+                      <input 
+                        type="url" 
+                        id="mlpWebsite"
+                        required
+                        value={mlpWebsite}
+                        onChange={(e) => setMlpWebsite(e.target.value)}
+                        className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white placeholder-white/20 focus:outline-none focus:border-[#00e5ff] transition-colors"
+                        placeholder="https://www.yourcompany.com"
+                        disabled={mlpSubmissionState === 'loading'}
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="mlpCompanyType" className="block text-xs font-mono text-white/70 uppercase tracking-widest mb-2">
+                        Company Type
+                      </label>
+                      <select 
+                        id="mlpCompanyType"
+                        required
+                        value={mlpCompanyType}
+                        onChange={(e) => setMlpCompanyType(e.target.value)}
+                        className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#00e5ff] transition-colors appearance-none"
+                        disabled={mlpSubmissionState === 'loading'}
+                      >
+                        <option value="" disabled>Select your business focus</option>
+                        <option value="E-commerce">E-commerce Store</option>
+                        <option value="SaaS">SaaS / Software</option>
+                        <option value="Small Business">Small Business / Local Service</option>
+                        <option value="Agency">Agency / Consultant</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+
+                    <button 
+                      type="submit"
+                      disabled={mlpSubmissionState === 'loading'}
+                      className="w-full bg-[#d946ef] text-white font-bold uppercase tracking-widest py-5 rounded-xl hover:bg-[#a930d4] transition-colors duration-300 flex items-center justify-center gap-3 mt-4 disabled:opacity-50 disabled:cursor-wait"
+                      data-hover="true"
+                    >
+                      {mlpSubmissionState === 'loading' ? 'Analyzing Uplink...' : 'Apply for Free MLP Strategy'}
+                      {mlpSubmissionState !== 'loading' && <ArrowRight className="w-5 h-5" />}
+                    </button>
+                    
+                    <p className="text-[10px] text-center text-gray-500 font-mono">
+                      Your data is handled securely under our MLP Protocol. We respect your privacy.
+                    </p>
+                  </form>
+                )}
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* --- END MLP LEAD GENERATION SECTION --- */}
+
 
       {/* ABOUT US SECTION - OPTION 2 MISSION STATEMENT */}
       <section id="about-us" className="relative z-10 py-20 md:py-32 bg-[#0a0a1a]/80 backdrop-blur-sm border-t border-white/10 overflow-hidden">
@@ -318,8 +485,8 @@ const App: React.FC = () => {
                 
                 <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10">
                    <div className="flex items-center gap-2 mb-2">
-                      <Wind className="text-[#00e5ff]" />
-                      <span className="text-white font-mono uppercase tracking-widest text-sm">Coordinates: 3030.X.ZE</span>
+                     <Wind className="text-[#00e5ff]" />
+                     <span className="text-white font-mono uppercase tracking-widest text-sm">Coordinates: 3030.X.ZE</span>
                    </div>
                   <div className="text-3xl md:text-4xl font-heading font-bold text-white">
                     The Cloudship Enterprise
@@ -340,7 +507,7 @@ const App: React.FC = () => {
                 <span className="text-[#00e5ff] font-bold">Empowering the community through knowledge and security.</span> Our mission is to demystify technology for all, while building robust platforms that defend your privacy and keep your creativity owned by you.
               </p>
               <p className="text-base text-gray-400 mb-8 leading-relaxed">
-                 We stand as guardians of the digital realm. By fusing education with secure infrastructure, we ensure that as we ascend technologically, we leave no one behind and leave no data unprotected.
+                  We stand as guardians of the digital realm. By fusing education with secure infrastructure, we ensure that as we ascend technologically, we leave no one behind and leave no data unprotected.
               </p>
               
               <div className="space-y-6 md:space-y-8">
@@ -376,7 +543,7 @@ const App: React.FC = () => {
                PATHWAYS TO <span className="text-[#00e5ff]">OPPORTUNITY</span>
              </h2>
              <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-               Secure your uplink and become a registered passenger on The Cloudship. Join the manifest for two distinct benefits: <span className="text-[#00e5ff]">1) Access to Dev Logs and Early Releases</span> and <span className="text-[#d946ef]">2) Curated Recommendations to Earn Crypto, Cash, and Gift Cards for your digital input and engagement.</span>
+               Secure your uplink and become a registered passenger on The Cloudship. Join the manifest for two distinct benefits: <span className="text-[#00e5ff]">1) Access to New Releases</span> and <span className="text-[#d946ef]">2) Curated Recommendations to Earn Crypto, Cash, and Gift Cards for your digital input and engagement.</span>
              </p>
           </div>
           
@@ -390,32 +557,32 @@ const App: React.FC = () => {
              <h3 className="text-xl font-heading font-bold text-white mb-6">Recommendations to Engage & Earn:</h3>
              <div className="space-y-4 mb-10">
                 <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg border border-white/10">
-                    <Ticket className="w-6 h-6 text-[#00e5ff] shrink-0 mt-1" />
-                    <div>
-                        <h4 className="text-lg font-bold text-white">Brave Browser (B.A.T. Tokens)</h4>
-                        <p className="text-sm text-gray-400">Browse the internet as usual with Brave Browser and earn Basic Attention Tokens (B.A.T.). Keep your data private, and get rewarded for your attention.</p>
-                    </div>
+                   <Ticket className="w-6 h-6 text-[#00e5ff] shrink-0 mt-1" />
+                   <div>
+                      <h4 className="text-lg font-bold text-white">Brave Browser (B.A.T. Tokens)</h4>
+                      <p className="text-sm text-gray-400">Browse the internet as usual with Brave Browser and earn Basic Attention Tokens (B.A.T.). Keep your data private, and get rewarded for your attention.</p>
+                   </div>
                 </div>
                  <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg border border-white/10">
-                    <Globe className="w-6 h-6 text-[#d946ef] shrink-0 mt-1" />
-                    <div>
-                        <h4 className="text-lg font-bold text-white">Content Creation & Tipping</h4>
-                        <p className="text-sm text-gray-400">As content creators, you can earn crypto and tips directly from your audience on various decentralized platforms. We help you find the right channels.</p>
-                    </div>
+                   <Globe className="w-6 h-6 text-[#d946ef] shrink-0 mt-1" />
+                   <div>
+                      <h4 className="text-lg font-bold text-white">Content Creation & Tipping</h4>
+                      <p className="text-sm text-gray-400">As content creators, you can earn crypto and tips directly from your audience on various decentralized platforms. We help you find the right channels.</p>
+                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg border border-white/10">
-                    <MapPin className="w-6 h-6 text-[#00e5ff] shrink-0 mt-1" />
-                    <div>
-                        <h4 className="text-lg font-bold text-white">User Interviews & Surveys</h4>
-                        <p className="text-sm text-gray-400">Participate in one-on-one surveys and user interviews to earn gift cards. Your informed opinions are valuable and deserve compensation.</p>
-                    </div>
+                   <MapPin className="w-6 h-6 text-[#00e5ff] shrink-0 mt-1" />
+                   <div>
+                      <h4 className="text-lg font-bold text-white">User Interviews & Surveys</h4>
+                      <p className="text-sm text-gray-400">Participate in one-on-one surveys and user interviews to earn gift cards. Your informed opinions are valuable and deserve compensation.</p>
+                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg border border-white/10">
-                    <Share2 className="w-6 h-6 text-[#d946ef] shrink-0 mt-1" />
-                    <div>
-                        <h4 className="text-lg font-bold text-white">Software Reviews (G2 & Others)</h4>
-                        <p className="text-sm text-gray-400">Earn gift cards by reviewing software you've already used on platforms like G2. Share your genuine experiences and get rewarded.</p>
-                    </div>
+                   <Share2 className="w-6 h-6 text-[#d946ef] shrink-0 mt-1" />
+                   <div>
+                      <h4 className="text-lg font-bold text-white">Software Reviews (G2 & Others)</h4>
+                      <p className="text-sm text-gray-400">Earn gift cards by reviewing software you've already used on platforms like G2. Share your genuine experiences and get rewarded.</p>
+                   </div>
                 </div>
              </div>
              {/* END NEW VALUE PROPOSITION LIST */}
@@ -440,52 +607,52 @@ const App: React.FC = () => {
                 </motion.div>
              ) : (
                <form onSubmit={handleLeadGenSubmit} className="flex flex-col gap-6">
-                 <div>
-                   <label htmlFor="email" className="block text-xs font-mono text-[#00e5ff] uppercase tracking-widest mb-2">
-                     Enter Your Uplink Coordinates (Email)
-                   </label>
-                   <input 
-                     type="email" 
-                     id="email"
-                     required
-                     value={email}
-                     onChange={(e) => setEmail(e.target.value)}
-                     className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white placeholder-white/20 focus:outline-none focus:border-[#00e5ff] transition-colors"
-                     placeholder="pilot@cloudship.com"
-                   />
-                 </div>
-                 
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                   <div className="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/5">
-                     <div className="w-2 h-2 bg-[#00e5ff] rounded-full animate-pulse" />
-                     <span className="text-xs text-gray-300">Encrypted Frequency</span>
-                   </div>
-                   <div className="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/5">
-                     <Cpu className="w-4 h-4 text-[#d946ef]" />
-                     <span className="text-xs text-gray-300">Direct Uplink</span>
-                   </div>
-                 </div>
+                  <div>
+                     <label htmlFor="email" className="block text-xs font-mono text-[#00e5ff] uppercase tracking-widest mb-2">
+                       Enter Your Uplink Coordinates (Email)
+                     </label>
+                     <input 
+                       type="email" 
+                       id="email"
+                       required
+                       value={email}
+                       onChange={(e) => setEmail(e.target.value)}
+                       className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white placeholder-white/20 focus:outline-none focus:border-[#00e5ff] transition-colors"
+                       placeholder="pilot@cloudship.com"
+                     />
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                     <div className="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/5">
+                        <div className="w-2 h-2 bg-[#00e5ff] rounded-full animate-pulse" />
+                        <span className="text-xs text-gray-300">Encrypted Frequency</span>
+                     </div>
+                     <div className="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/5">
+                        <Cpu className="w-4 h-4 text-[#d946ef]" />
+                        <span className="text-xs text-gray-300">Direct Uplink</span>
+                     </div>
+                  </div>
 
-                 {/* NEW DISCLOSURE */}
-                 <p className="text-[10px] text-center text-gray-400 font-mono leading-relaxed mt-2">
-                   By providing your email, you acknowledge that we partner with 3rd party companies to assist in internet marketing efforts. You may receive communications about marketing services for your company. While we offer O.Mar 3.0, larger engagements may be referred to our trusted companions.
-                 </p>
-                 {/* END NEW DISCLOSURE */}
+                  {/* NEW DISCLOSURE - This is for the Boarding/Monetization form */}
+                  <p className="text-[10px] text-center text-gray-400 font-mono leading-relaxed mt-2">
+                     By providing your email, you acknowledge that we partner with 3rd party companies to assist in internet marketing efforts. You may receive communications about marketing services for your company. While we offer O.Mar 3.0, larger engagements may be referred to our trusted companions.
+                  </p>
+                  {/* END NEW DISCLOSURE */}
 
-                 <button 
-                   type="submit"
-                   disabled={submissionState === 'loading'}
-                   className="w-full bg-[#00e5ff] text-black font-bold uppercase tracking-widest py-5 rounded-xl hover:bg-white transition-colors duration-300 flex items-center justify-center gap-3 mt-4 disabled:opacity-50 disabled:cursor-wait"
-                   data-hover="true"
-                 >
-                   {submissionState === 'loading' ? 'Establishing Connection...' : 'Initialize Uplink'}
-                   {submissionState !== 'loading' && <ArrowRight className="w-5 h-5" />}
-                 </button>
-                 
-                 <p className="text-[10px] text-center text-gray-500 font-mono">
-                   By connecting, you agree to our protocols of intergalactic engagement.
-                 </p>
-               </form>
+                  <button 
+                    type="submit"
+                    disabled={submissionState === 'loading'}
+                    className="w-full bg-[#00e5ff] text-black font-bold uppercase tracking-widest py-5 rounded-xl hover:bg-white transition-colors duration-300 flex items-center justify-center gap-3 mt-4 disabled:opacity-50 disabled:cursor-wait"
+                    data-hover="true"
+                  >
+                    {submissionState === 'loading' ? 'Establishing Connection...' : 'Initialize Uplink'}
+                    {submissionState !== 'loading' && <ArrowRight className="w-5 h-5" />}
+                  </button>
+                  
+                  <p className="text-[10px] text-center text-gray-500 font-mono">
+                    By connecting, you agree to our protocols of intergalactic engagement.
+                  </p>
+                </form>
              )}
           </div>
         </div>
@@ -516,7 +683,7 @@ const App: React.FC = () => {
         </div>
       </footer>
 
-      {/* Project Detail Modal */}
+      {/* Project Detail Modal (Modal content remains the same) */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
