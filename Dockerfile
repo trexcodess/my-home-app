@@ -1,18 +1,31 @@
 # Stage 1: Build the React application
-FROM node:18-alpine AS builder  # <-- Name this stage 'builder'
+FROM node:18-alpine AS builder 
+
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./ # Copy package.json and pnpm-lock.yaml
-RUN pnpm install                   # Install dependencies using pnpm
-COPY . .                           # Copy the rest of your application code
-RUN pnpm run build                 # This command generates your /dist folder
 
-# Stage 2: Serve the application with a lightweight server (e.g., 'serve' or Nginx)
-FROM node:18-alpine                # Or a smaller image like 'alpine', if 'serve' is installed
-                                   # or 'nginx:stable-alpine' if using Nginx
-RUN npm install -g serve           # Install 'serve' globally if you want to use it
-WORKDIR /app
-COPY --from=builder /app/dist ./dist # <-- **CHANGED: Copy from 'builder' stage, '/app/dist' to './dist'**
+# Copy package.json and pnpm-lock.yaml first for efficient Docker layer caching
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install                  
+COPY . .                          
+RUN pnpm run build                
 
-EXPOSE 8080                       # Or whatever port 'serve' uses (default 3000)
-CMD ["serve", "-s", "dist", "-l", "$PORT"]# Command to start your application
+# Stage 2: Serve the application using the 'serve' package
+FROM node:18-alpine               
+WORKDIR /app                     
+RUN npm install -g serve           
 
+# Copy only the built output from the 'builder' stage
+# The 'dist' folder generated in the first stage, located at /app/dist within that stage,
+# is copied to the current working directory (/app) of this second stage.
+COPY --from=builder /app/dist ./dist
+
+# Expose the port where the 'serve' application will listen.
+# Cloud Run typically expects services to listen on port 8080.
+EXPOSE 8080
+
+# Command to start your application using 'serve'.
+# -s means serve static files, 'dist' is the folder to serve,
+# -l specifies the listen address and port. We use 8080.
+# Cloud Run will set the PORT environment variable, but explicitly setting it to 8080
+# within the CMD is often safer if the runtime environment doesn't reliably set $PORT.
+CMD ["serve", "-s", "dist", "-l", "8080"]
