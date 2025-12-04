@@ -1,40 +1,45 @@
-# --- STAGE 1: BUILD ---
-FROM docker.io/node:20-alpine AS builder
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-# Set working directory
-WORKDIR /app
+# [START cloudrun_helloworld_dockerfile]
 
-# Install pnpm globally. This fixes the "pnpm: not found" error.
-# We must do this before trying to use pnpm commands.
-RUN npm install -g pnpm
+# Use the official lightweight Node.js image.
+# https://hub.docker.com/_/node
+FROM node:20-slim
 
-# Copy package.json and pnpm-lock.yaml to leverage Docker cache
-COPY package.json pnpm-lock.yaml* ./
+# Create and change to the app directory.
+WORKDIR /usr/src/app
 
-# Install dependencies using pnpm
-RUN pnpm install --frozen-lockfile
+# Copy application dependency manifests to the container image.
+# A wildcard is used to ensure copying both package.json AND package-lock.json (when available).
+# Copying this first prevents re-running npm install on every code change.
+COPY package*.json ./
 
-# Copy the rest of your application code
-COPY . .
+# Install dependencies.
+# if you need a deterministic and repeatable build create a
+# package-lock.json file and use npm ci:
+# RUN npm ci --omit=dev
+# if you need to include development dependencies during development
+# of your application, use:
+# RUN npm install --dev
 
-# Build the application for production
-RUN pnpm run build
+RUN pnpm install --omit=dev
 
+# Copy local code to the container image.
+COPY . ./
 
-# --- STAGE 2: SERVE (for Cloud Run) ---
-FROM docker.io/nginx:alpine
+# Run the web service on container startup.
+CMD [ "node", "index.js" ]
 
-# The default Nginx configuration listens on port 80.
-# Cloud Run requires the container to listen on the port specified by the PORT environment variable (default 8080).
-# We copy a custom configuration to fix this.
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Copy the built assets from the builder stage to Nginx's public directory
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# The EXPOSE instruction is mostly documentation, but good practice.
-EXPOSE 8080
-
-# Command to run Nginx
-# Nginx will use the port specified in the custom nginx.conf file.
-CMD ["nginx", "-g", "daemon off;"]
+# [END cloudrun_helloworld_dockerfile]
