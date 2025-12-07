@@ -8,6 +8,9 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log('Hello world listening on port', port);
+});
 
 // 1. Static files first (CSS/JS/Images)
 app.use(express.static(path.join(__dirname, 'dist')));
