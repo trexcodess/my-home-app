@@ -1,4 +1,4 @@
-FROM node:16.15.1 as build
+FROM node:20.19.6 AS build
 WORKDIR /cloudship-999
 
 COPY package*.json .
