@@ -670,13 +670,13 @@ const App: React.FC = () => {
           </div>
           
           <div className="flex gap-6 md:gap-8 flex-wrap">
-            <a href="https://g.dev//cloudship999" className="text-gray-400 hover:text-[#00e5ff] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
+            <a href="https://g.dev/cloudship999" className="text-gray-400 hover:text-[#00e5ff] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
               G. Dev
             </a>
-            <a href="#" className="text-gray-400 hover:text-[#00e5ff] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
+            <a href="https://www.linkedin.com/in/latoya-menyweather-4a5669329/" className="text-gray-400 hover:text-[#00e5ff] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
               LinkedIn
             </a>
-            <a href="#" className="text-gray-400 hover:text-[#00e5ff] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
+            <a href="https://github.com/trexcodess" className="text-gray-400 hover:text-[#00e5ff] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
               Github
             </a>
           </div>
