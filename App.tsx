@@ -31,15 +31,15 @@ const PROJECTS: Artist[] = [
     id: '2', 
     name: 'The MLP', 
     genre: 'Marketing Protocol / AI Integration', 
-    day: 'ALPHA', 
+    day: 'Coming Soon!', 
     image: AfroImage, 
-    description: 'Our core **Machine Learning Protocol (MLP)** for enterprise-level, secure, federated marketing intelligence. The strategic framework that powers O.Mar 3.0.'
+    description: 'Our core Marketing Program for enterprise-level, secure, federated marketing intelligence. The strategic framework that powers O.Mar 3.0.'
   },
   { 
     id: '3', 
     name: 'O.Mar 3.0 Ai', 
-    genre: 'Generative Conversational AI', 
-    day: 'ALPHA', 
+    genre: 'Coming Soon!', 
+    day: 'Coming Soon!', 
     image: AfroImage4, // Using the image you provided for O.Mar 3.0
     description: 'The advanced Generative AI agent built within The MLP, specializing in hyper-personalized user experience and advanced NLU for strategic marketing and engagement.'
   },
@@ -47,7 +47,7 @@ const PROJECTS: Artist[] = [
     id: '4', 
     name: 'Dispatch', 
     genre: 'Decentralized News & Education', 
-    day: 'BETA', 
+    day: 'Coming Soon!', 
     image: AfroImage2,
     description: "Trusted, community-verified news and education. AI filters misinformation to keep you informed about the world's future."
   },
@@ -55,15 +55,15 @@ const PROJECTS: Artist[] = [
     id: '5', 
     name: 'Fauna Echo', 
     genre: 'Eco-Tech / Community Service', 
-    day: 'R&D', 
+    day: 'Coming Soon!', 
     image: AfroImage3,
-    description: "Find missing animals fast! Latitude combines geo-spatial mapping, AI image recognition, and community input to locate and protect lost pets and local wildlife. It's the smart way to care for our animal community."
+    description: "Find missing animals fast! F.E combines geo-spatial mapping, AI image recognition, and community input to locate and protect lost pets and local wildlife. It's the smart way to care for our animal community."
   },
   { 
     id: '6', 
     name: 'Zenith', 
     genre: 'Interactive Digital Experiences', 
-    day: 'R&D', 
+    day: 'Coming Soon!', 
     image: AfroImage1,
     description: 'A platform for immersive, interactive, and socially conscious digital entertainment, including games and VR experiences, focused on **Afrofuturist world-building** and creative expression.'
   },
