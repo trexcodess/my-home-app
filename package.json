@@ -1,7 +1,7 @@
 {
   "name": "the-cloudship-enterprise",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "engines": {
     "node": "20.x"
@@ -20,7 +20,8 @@
     "lucide-react": "^0.553.0",
     "mongoose": "^9.0.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

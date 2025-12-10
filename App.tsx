@@ -7,6 +7,8 @@ import CustomCursor from './components/CustomCursor';
 import ArtistCard from './components/ArtistCard';
 import AIChat from './components/AIChat';
 import { Artist } from './types';
+import { AiOutlineGoogle } from 'react-icons/ai'; // Or another Google icon from react-icons
+import { FaPaypal } from 'react-icons/fa';
 
 // Keep your existing image imports here
 import Latitude from './src/assets/images/latitude.png'
@@ -336,7 +338,7 @@ const App: React.FC = () => {
                 <GradientText text="Start Growing." className="text-6xl md:text-8xl" />
               </h2>
               <p className="text-xl text-gray-200 mb-8 font-light leading-relaxed max-w-xl">
-                Get Your **Minimum Loveable Position (MLP) SEO Strategy** in 7 Days. The lean, hyper-focused protocol to find the fastest path to high-value organic traffic.
+                Get Your MLP SEO Strategy The lean, hyper-focused protocol to find the fastest path to high-value organic traffic.
               </p>
               
               <div className="space-y-6">
@@ -361,9 +363,10 @@ const App: React.FC = () => {
                 <p className="text-sm text-gray-500 font-mono uppercase tracking-widest mb-4">Trusted by Market Builders</p>
                 <div className="flex flex-wrap gap-6 opacity-60">
                   {/* Replace with real client logos if available */}
-                  <DollarSign className="w-8 h-8 text-white/50" />
-                  <Code className="w-8 h-8 text-white/50" />
-                  <Database className="w-8 h-8 text-white/50" />
+                 <AiOutlineGoogle className="w-8 h-8 text-white/50" />
+  <FaPaypal className="w-8 h-8 text-white/50" />
+  {/* Keeping one placeholder or adding a third logo, e.g., an existing client */}
+  <Database className="w-8 h-8 text-white/50" />
                 </div>
               </div>
             </div>
