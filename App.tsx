@@ -61,8 +61,8 @@ const PROJECTS: Artist[] = [
   },
   { 
     id: '6', 
-    name: 'Zenith', 
-    genre: 'Interactive Digital Experiences', 
+    name: 'Saturn', 
+    genre: 'Entertainment', 
     day: 'Coming Soon!', 
     image: AfroImage1,
     description: 'A platform for immersive, interactive, and socially conscious digital entertainment, including games and VR experiences, focused on **Afrofuturist world-building** and creative expression.'
