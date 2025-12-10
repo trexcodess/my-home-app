@@ -9,6 +9,7 @@ import AIChat from './components/AIChat';
 import { Artist } from './types';
 import { AiOutlineGoogle } from 'react-icons/ai'; // Or another Google icon from react-icons
 import { FaPaypal } from 'react-icons/fa';
+import { SiMongodb, SiSolana } from 'react-icons/si';
 
 // Keep your existing image imports here
 import Latitude from './src/assets/images/latitude.png'
@@ -364,9 +365,9 @@ const App: React.FC = () => {
                 <div className="flex flex-wrap gap-6 opacity-60">
                   {/* Replace with real client logos if available */}
                  <AiOutlineGoogle className="w-8 h-8 text-white/50" />
-  <FaPaypal className="w-8 h-8 text-white/50" />
-  {/* Keeping one placeholder or adding a third logo, e.g., an existing client */}
-  <Database className="w-8 h-8 text-white/50" />
+                  <FaPaypal className="w-8 h-8 text-white/50" />
+                  <SiMongodb className="w-8 h-8 text-white/50" />
+                  <SiSolana className="w-8 h-8 text-white/50" />
                 </div>
               </div>
             </div>
