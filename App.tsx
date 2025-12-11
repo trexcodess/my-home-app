@@ -14,7 +14,7 @@ import AfroImage1 from './src/assets/images/AfroCity_1.jpg'
 import AfroImage2 from './src/assets/images/AfroCity_2.jpg'
 import AfroImage3 from './src/assets/images/AfroCity_3.jpg'
 import AfroImage4 from './src/assets/images/AfroCity_4.jpg'
-
+import MarketOS from './src/assets/images/Market_OS.png'
 // UPDATED PROJECTS ARRAY (SHIP MODULES)
 const PROJECTS: Artist[] = [
 { 
@@ -28,11 +28,11 @@ const PROJECTS: Artist[] = [
   },
   { 
     id: '2', 
-    name: 'The MLP', 
+    name: 'Market Leader OS', 
     genre: 'Marketing', // Updated Genre Name
     day: '2026', 
-    image: AfroImage, 
-    description: 'An end-to-end encrypted communication platform built on a peer-to-peer network. Focused on **absolute user data privacy** and resistance to surveillance, ideal for community organizing.'
+    image: MarketOS, 
+    description: 'You’re currently playing the game of "content creation," where you are at the mercy of the algorithm. To secure your future, you need to transition into a Market Leader. This guide outlines your "path out of YouTube"—moving from renting an audience on a social platform to owning an audience on your own website.'
   },
   { 
     id: '3', 
