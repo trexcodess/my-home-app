@@ -66,7 +66,7 @@ const PROJECTS: Artist[] = [
     genre: 'Education', // Updated Genre Name
     day: 'March 2026', 
     image: Saturn,
-    description: 'A platform for immersive, interactive, and socially conscious digital entertainment, including games and VR experiences, focused on **Afrofuturist world-building** and creative expression.'
+    description: 'Project Saturn is a futuristic, personalized learning platform for the digital age (circa 2077).Imagine a global educational  experience that instantly adapts to your unique learning style, interests, and goals. Saturn is not just a school; it’s an immersive, decentralized digital ecosystem built for digital natives seeking future-ready skills.'
   },
 ];
 
