@@ -518,10 +518,10 @@ const App: React.FC = () => {
             <a href="https://g.dev//cloudship999" className="text-gray-400 hover:text-[#00E5CC] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
               G. Dev
             </a>
-            <a href="#" className="text-gray-400 hover:text-[#00E5CC] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
+            <a href="https://linkedin.com/company/thecloudshipenterprise" className="text-gray-400 hover:text-[#00E5CC] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
               LinkedIn
             </a>
-            <a href="#" className="text-gray-400 hover:text-[#00E5CC] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
+            <a href="https://github.com/trexcodess" className="text-gray-400 hover:text-[#00E5CC] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
               Github
             </a>
           </div>
