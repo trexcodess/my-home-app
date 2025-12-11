@@ -15,6 +15,7 @@ import AfroImage2 from './src/assets/images/AfroCity_2.jpg'
 import AfroImage3 from './src/assets/images/AfroCity_3.jpg'
 import AfroImage4 from './src/assets/images/AfroCity_4.jpg'
 import MarketOS from './src/assets/images/Market_OS.png'
+import Dispatch from './src/assets/images/Dispatch_0.png'
 // UPDATED PROJECTS ARRAY (SHIP MODULES)
 const PROJECTS: Artist[] = [
 { 
@@ -40,15 +41,15 @@ const PROJECTS: Artist[] = [
     genre: 'Marketing', // Updated Genre Name
     day: '2026', 
     image: AfroImage4, 
-    description: 'The 3.0 iteration of our Generative AI agent, specializing in hyper-personalized user experience and advanced NLU. Integrated for complex task execution and real-time support.'
+    description: 'Ask O.Mar 3.0 how to apply the four basic, unchanging MLP principles—Research, Conversions, Traffic, and Product—to your current website strategy.'
   },
   { 
     id: '4', 
     name: 'Dispatch', 
-    genre: 'D News & Education', // Updated Genre Name
+    genre: 'D News', // Updated Genre Name
     day: 'August 2026', 
-    image: AfroImage2,
-    description: 'A community-driven news aggregation and verification platform. Utilizing AI to fight misinformation and **educate** on the complex forces shaping tomorrow\'s world.'
+    image: Dispatch,
+    description: 'The new way to communicate and get curated, reliable news in one place. Dispatch is a unique news and communication platform that blends modern media with a nostalgic, unique interface.'
   },
   { 
     id: '5', 
