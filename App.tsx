@@ -7,15 +7,16 @@ import CustomCursor from './components/CustomCursor';
 import ArtistCard from './components/ArtistCard';
 import AIChat from './components/AIChat';
 import { Artist } from './types';
-// Keep your existing image imports here
+// images
 import AfroImage5 from './src/assets/images/Afro_City_5.jpg'
-import AfroImage from './src/assets/images/AfroCity_0.jpg'
-import AfroImage1 from './src/assets/images/AfroCity_1.jpg'
-import AfroImage2 from './src/assets/images/AfroCity_2.jpg'
 import AfroImage3 from './src/assets/images/AfroCity_3.jpg'
 import AfroImage4 from './src/assets/images/AfroCity_4.jpg'
 import MarketOS from './src/assets/images/Market_OS.png'
 import Dispatch from './src/assets/images/Dispatch_0.png'
+import FEAgency from './src/assets/images/FE_Agency.png'
+import Saturn from './src/assets/images/Saturn_Platform.png'
+
+
 // UPDATED PROJECTS ARRAY (SHIP MODULES)
 const PROJECTS: Artist[] = [
 { 
@@ -56,15 +57,15 @@ const PROJECTS: Artist[] = [
     name: 'Fauna Echo', 
     genre: 'Animal', // Updated Genre Name
     day: 'June 2026', 
-    image: AfroImage1,
-    description: 'A geo-spatial app using image recognition and community input to help **locate and protect lost pets and wildlife**. A tool for civic responsibility and environmental stewardship.'
+    image: FEAgency,
+    description: 'Turn your sightings into rescues with The Fauna Echo Agency—the smart, community-powered app dedicated to reuniting lost pets and safeguarding local wildlife.'
   },
   { 
     id: '6', 
     name: 'Saturn', 
     genre: 'Education', // Updated Genre Name
     day: 'March 2026', 
-    image: AfroImage3,
+    image: Saturn,
     description: 'A platform for immersive, interactive, and socially conscious digital entertainment, including games and VR experiences, focused on **Afrofuturist world-building** and creative expression.'
   },
 ];
