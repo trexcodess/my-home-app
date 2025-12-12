@@ -166,12 +166,12 @@ const App: React.FC = () => {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 md:px-8 py-6 mix-blend-difference">
         <div className="font-heading text-xl md:text-2xl font-bold tracking-tighter text-white cursor-default z-50 flex items-center gap-2">
-           <span className="text-[#00E5CC]">☁</span> TCE
+           <span className="text-[#00E5CC]">☁</span> tce
         </div>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-10 text-sm font-bold tracking-widest uppercase">
-          {['Innovations', 'About Us', 'Boarding'].map((item) => (
+          {['Innovations', 'Our Mission', 'Boarding'].map((item) => (
             <button 
               key={item} 
               onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
@@ -238,7 +238,7 @@ const App: React.FC = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="flex items-center gap-3 md:gap-6 text-xs md:text-sm font-mono text-[#00E5CC] tracking-[0.2em] md:tracking-[0.3em] uppercase mb-6 bg-black/40 px-6 py-2 rounded-full backdrop-blur-md border border-[#00E5CC]/20"
           >
-            <span>Est. 2012</span>
+            <span>Est. 2011</span>
             <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#FFC04C] rounded-full animate-pulse"/>
             <span>Technology for Ascension</span>
           </motion.div>
@@ -376,17 +376,17 @@ const App: React.FC = () => {
   { 
     icon: Globe, 
     title: 'Knowledge is Power', 
-    desc: 'Demystifying technology through innovative education and our proprietary LMS, Saturn, ensuring the next generation is ready to build the future.',
+    desc: 'Demystifying technology through innovative and education our app Saturn, ensures the next generation is ready to build their future.',
   },
   { 
     icon: Shield, 
     title: 'Sovereign Data Protocols', 
-    desc: 'Your data belongs to you. We utilize DApp technology and immutable architecture to ensure your digital identity and assets remain privately owned.', 
+    desc: 'Your data belongs to you. We utilize decentralized technology to ensure your digital identity and assets remain privately owned.', 
   },
   { 
     icon: Zap, 
     title: 'AI-Powered Module Suite', 
-    desc: 'Protecting the soul of art and innovation. We are developers of six proprietary AI and DApp applications, engineered for transformative, user-owned utility.', 
+    desc: 'Protecting the soul of art and innovation. We develop proprietary web applications.', 
   },
 ].map((feature, i) => (
                   <div
