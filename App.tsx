@@ -356,7 +356,7 @@ const App: React.FC = () => {
               </h2>
               <div className="h-1 w-20 bg-[#FFC04C] mb-8" />
               
-              {/* OPTION 2 MISSION STATEMENT */}
+              {/*MISSION STATEMENT */}
               <p className="text-lg md:text-xl text-gray-200 mb-6 font-light leading-relaxed">
                 <span className="text-[#00E5CC] font-bold">Empowering the community through knowledge and innovation.</span> Our mission is to demystify technology for all, while building innovative platforms that protect your privacy and keep your creativity owned by you.
               </p>
@@ -367,7 +367,7 @@ const App: React.FC = () => {
               <div className="space-y-6 md:space-y-8">
                 {[
                 { icon: Globe, title: 'Knowledge is Power', desc: 'Demystifying technology through innovation and education, ensuring the next generation is ready to build the future.' },
-                { icon: Shield, title: 'Sovereign Data', desc: 'Your data belongs to you. We implement decentralized technologies to ensure your digital footprint remains private.' },
+                { icon: Shield, title: 'Sovereign Data', desc: 'Your data belongs to you. We implement decentralized technologies to ensure your digital footprint remains privately owned.' },
                 { icon: Zap, title: 'Creative Guardianship', desc: 'Protecting the soul of art. We use immutable ownership protocols to ensure creatives retain control and value over their creations.' },
                 ].map((feature, i) => (
                   <div
@@ -413,11 +413,11 @@ const App: React.FC = () => {
                 <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg border border-white/10">
                     <Ticket className="w-6 h-6 text-[#00E5CC] shrink-0 mt-1" />
                     <div class="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg">
-  <img src="path/to/brave-logo.png" alt="Brave Browser Logo" class="h-16 w-16" />
+  <img src="https://styles.redditmedia.com/t5_h6drn/styles/communityIcon_qrrthyodef771.png" alt="Brave Browser Logo" class="h-16 w-16" />
   
   <div>
     <h4 class="text-lg font-bold text-white">Brave Browser & Content Creation</h4>
-    <p class="text-sm text-gray-400">Simply browse the internet as usual and earn B.A.T tokens. Content creators can also earn crypto tips directly from their audience.</p>
+    <p class="text-sm text-gray-400">Simply browse the internet as usual and earn Basic Attention Tokens. Content creators can also earn crypto tips directly from their audience.</p>
     
     <div class="mt-4">
       <a 
@@ -458,8 +458,8 @@ const App: React.FC = () => {
                   <div className="w-20 h-20 rounded-full bg-[#00E5CC]/20 flex items-center justify-center mb-6">
                     <Radio className="w-10 h-10 text-[#00E5CC]" />
                   </div>
-                  <h3 className="text-2xl font-bold font-heading text-white mb-2">MLP Uplink Established</h3>
-                  <p className="text-gray-400">Welcome aboard. O.Mar 3.0 will transmit boarding protocols and first earning opportunities to your frequency (email).</p>
+                  <h3 className="text-2xl font-bold font-heading text-white mb-2"> Uplink Established</h3>
+                  <p className="text-gray-400">Welcome aboard.</p>
                   <button 
                     onClick={() => setSubmissionState('idle')}
                     className="mt-8 text-sm text-[#00E5CC] underline underline-offset-4 hover:text-white"
@@ -489,16 +489,13 @@ const App: React.FC = () => {
                      <div className="w-2 h-2 bg-[#00E5CC] rounded-full animate-pulse" />
                      <span className="text-xs text-gray-300">Encrypted Frequency</span>
                    </div>
-                   <div className="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/5">
-                     <Cpu className="w-4 h-4 text-[#FFC04C]" />
-                     <span className="text-xs text-gray-300">O.Mar 3.0 Assisted</span>
-                   </div>
+             
                  </div>
 
                  {/* REVISED DISCLOSURE */}
-                 <p className="text-[10px] text-center text-gray-400 font-mono leading-relaxed mt-2">
-                   By providing your email, you acknowledge that **O.Mar 3.0, our MLP AI**, will assist in connecting you with relevant 3rd party marketing partners. You may receive targeted communications about marketing products and opportunities to earn rewards. While we offer O.Mar 3.0's capabilities, specific engagements may be facilitated by our trusted companions.
-                 </p>
+                      <p className="text-[10px] text-center text-gray-400 font-mono leading-relaxed mt-2">
+                        By providing your email, you consent to receive direct updates and news from The Cloudship Enterprise (including information on Latitude and other products). You also                      acknowledge and consent that we may share or sell your information with trusted third-party partners (such as Startup Voyager or Paypal) to facilitate targeted                     communications about relevant products and opportunities.
+                      </p>
                  {/* END REVISED DISCLOSURE */}
 
                  <button 
@@ -507,7 +504,7 @@ const App: React.FC = () => {
                    className="w-full bg-[#00E5CC] text-black font-bold uppercase tracking-widest py-5 rounded-xl hover:bg-white transition-colors duration-300 flex items-center justify-center gap-3 mt-4 disabled:opacity-50 disabled:cursor-wait"
                    data-hover="true"
                  >
-                   {submissionState === 'loading' ? 'Establishing Connection...' : 'Initialize MLP Uplink'}
+                   {submissionState === 'loading' ? 'Establishing Connection...' : 'Initialize Uplink'}
                    {submissionState !== 'loading' && <ArrowRight className="w-5 h-5" />}
                  </button>
                  
@@ -527,7 +524,7 @@ const App: React.FC = () => {
                CLOUDSHIP <span className="text-xs align-top text-[#00E5CC]">Enterprise</span>
              </div>
              <div className="flex gap-2 text-xs font-mono text-gray-400">
-               <span>Building the Future since 2012</span>
+               <span>Building the Future since 2011</span>
              </div>
           </div>
           
