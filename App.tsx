@@ -324,7 +324,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* ABOUT US SECTION - OPTION 2 MISSION STATEMENT */}
+      {/* ABOUT US SECTION -MISSION STATEMENT */}
       <section id="about-us" className="relative z-10 py-20 md:py-32 bg-[#0a0a1a]/80 backdrop-blur-sm border-t border-white/10 overflow-hidden">
         {/* Decorative blurred circle */}
         <div className="absolute top-1/2 left-[-20%] w-[50vw] h-[50vw] bg-[#00E5CC]/10 rounded-full blur-[60px] pointer-events-none will-change-transform" style={{ transform: 'translateZ(0)' }} />
@@ -549,7 +549,7 @@ const App: React.FC = () => {
           </div>
           
           <div className="flex gap-6 md:gap-8 flex-wrap">
-            <a href="https://g.dev//cloudship999" className="text-gray-400 hover:text-[#00E5CC] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
+            <a href="https://g.dev/cloudship999" className="text-gray-400 hover:text-[#00E5CC] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
               G. Dev
             </a>
             <a href="https://linkedin.com/company/thecloudshipenterprise" className="text-gray-400 hover:text-[#00E5CC] font-bold uppercase text-xs tracking-widest transition-colors cursor-pointer" data-hover="true">
