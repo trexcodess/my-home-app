@@ -367,8 +367,8 @@ const App: React.FC = () => {
               <div className="space-y-6 md:space-y-8">
                 {[
                 { icon: Globe, title: 'Knowledge is Power', desc: 'Demystifying technology through innovation and education, ensuring the next generation is ready to build the future.' },
-                { icon: Shield, title: 'Sovereign Data', desc: 'Your data belongs to you. We implement rigorous encryption and decentralized storage to ensure your digital footprint remains private.' },
-                { icon: Zap, title: 'Creative Guardianship', desc: 'Protecting the soul of art. We use immutable ownership protocols to ensure artists retain control and value over their creations.' },
+                { icon: Shield, title: 'Sovereign Data', desc: 'Your data belongs to you. We implement decentralized technologies to ensure your digital footprint remains private.' },
+                { icon: Zap, title: 'Creative Guardianship', desc: 'Protecting the soul of art. We use immutable ownership protocols to ensure creatives retain control and value over their creations.' },
                 ].map((feature, i) => (
                   <div
                     key={i} 
