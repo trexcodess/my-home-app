@@ -394,10 +394,10 @@ const App: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
              <h2 className="text-4xl md:text-8xl font-heading font-bold text-white mb-4">
-               ACTIVATE YOUR <span className="text-[#00E5CC]">MLP UPLINK</span>
+               ACTIVATE YOUR <span className="text-[#00E5CC]">UPLINK</span>
              </h2>
              <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-               Secure your boarding pass and join **The Cloudship Enterprise's Marketing & Lead Protocol (MLP)**. This is your gateway to both **exclusive development insights** and **lucrative opportunities to earn rewards, cash, and crypto** by sharing your valuable opinions and engaging with innovative marketing products.
+               Secure your boarding pass and join The Cloudship Enterprise's Mailing List. This is your gateway to exclusive insights and opportunities to earn gift cards and crypto by sharing your valuable opinions and engaging with innovative products created by us and our partners.
              </p>
           </div>
           
