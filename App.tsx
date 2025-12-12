@@ -358,10 +358,10 @@ const App: React.FC = () => {
               
               {/* OPTION 2 MISSION STATEMENT */}
               <p className="text-lg md:text-xl text-gray-200 mb-6 font-light leading-relaxed">
-                <span className="text-[#00E5CC] font-bold">Empowering the community through knowledge and security.</span> Our mission is to demystify technology for all, while building robust platforms that defend your privacy and keep your creativity owned by you.
+                <span className="text-[#00E5CC] font-bold">Empowering the community through knowledge and innovation.</span> Our mission is to demystify technology for all, while building innovative platforms that protect your privacy and keep your creativity owned by you.
               </p>
               <p className="text-base text-gray-400 mb-8 leading-relaxed">
-                 We stand as guardians of the digital realm. By fusing education with secure infrastructure, we ensure that as we ascend technologically, we leave no one behind and leave no data unprotected.
+                 We stand as guardians of the digital realm. By fusing afrofuturism with a secure infrastructure, we ensure that as we ascend technologically, we leave no one behind and leave no user unprotected.
               </p>
               
               <div className="space-y-6 md:space-y-8">
