@@ -408,14 +408,29 @@ const App: React.FC = () => {
              <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b-2 border-r-2 border-[#00E5CC]" />
              
              {/* Value Proposition List */}
-             <h3 className="text-xl font-heading font-bold text-white mb-6">Ways O.Mar 3.0 Connects You to Opportunities:</h3>
+             <h3 className="text-xl font-heading font-bold text-white mb-6">A few ways We Connect You to Opportunities:</h3>
              <div className="space-y-4 mb-10">
                 <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg border border-white/10">
                     <Ticket className="w-6 h-6 text-[#00E5CC] shrink-0 mt-1" />
-                    <div>
-                        <h4 className="text-lg font-bold text-white">Brave Browser & Content Creation</h4>
-                        <p className="text-sm text-gray-400">Simply browse the internet as usual and earn **B.A.T tokens**. Content creators can also earn crypto tips directly from their audience.</p>
-                    </div>
+                    <div class="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg">
+  <img src="path/to/brave-logo.png" alt="Brave Browser Logo" class="h-16 w-16" />
+  
+  <div>
+    <h4 class="text-lg font-bold text-white">Brave Browser & Content Creation</h4>
+    <p class="text-sm text-gray-400">Simply browse the internet as usual and earn B.A.T tokens. Content creators can also earn crypto tips directly from their audience.</p>
+    
+    <div class="mt-4">
+      <a 
+        href="https://brave.com/download/" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="inline-block px-4 py-2 text-sm font-medium text-white bg-orange-600 rounded-md hover:bg-orange-700 transition duration-150"
+      >
+        Download Brave Browser
+      </a>
+    </div>
+  </div>
+</div>
                 </div>
                 <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg border border-white/10">
                     <MapPin className="w-6 h-6 text-[#FFC04C] shrink-0 mt-1" />
