@@ -33,7 +33,8 @@ const PROJECTS: Artist[] = [
     name: 'Market Leader OS', 
     genre: 'Marketing', // Updated Genre Name
     day: '2026', 
-    image: MarketOS, 
+    image: MarketOS,
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1',
     description: 'You’re currently playing the game of "content creation," where you are at the mercy of the algorithm. To secure your future, you need to transition into a Market Leader. This guide outlines your "path out of YouTube"—moving from renting an audience on a social platform to owning an audience on your own website.'
   },
   { 
@@ -41,7 +42,8 @@ const PROJECTS: Artist[] = [
     name: 'O.Mar 3.0', 
     genre: 'Marketing', // Updated Genre Name
     day: '2026', 
-    image: AfroImage4, 
+    image: AfroImage4,
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1',
     description: 'Ask O.Mar 3.0 how to apply the four basic, unchanging MLP principles—Research, Conversions, Traffic, and Product—to your current website strategy.'
   },
   { 
@@ -50,6 +52,7 @@ const PROJECTS: Artist[] = [
     genre: 'D News', // Updated Genre Name
     day: 'August 2026', 
     image: Dispatch,
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1',
     description: 'The new way to communicate and get curated, reliable news in one place. Dispatch is a unique news and communication platform that blends modern media with a nostalgic, unique interface.'
   },
   { 
@@ -58,6 +61,7 @@ const PROJECTS: Artist[] = [
     genre: 'Animal', // Updated Genre Name
     day: 'June 2026', 
     image: FEAgency,
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1',
     description: 'Turn your sightings into rescues with The Fauna Echo Agency—the smart, community-powered app dedicated to reuniting lost pets and safeguarding local wildlife.'
   },
   { 
@@ -66,6 +70,7 @@ const PROJECTS: Artist[] = [
     genre: 'Education', // Updated Genre Name
     day: 'March 2026', 
     image: Saturn,
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1',
     description: 'Project Saturn is a futuristic, personalized learning platform for the digital age (circa 2077).Imagine a global educational  experience that instantly adapts to your unique learning style, interests, and goals. Saturn is not just a school; it’s an immersive, decentralized digital ecosystem built for digital natives seeking future-ready skills.'
   },
 ];
