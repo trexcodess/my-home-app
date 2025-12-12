@@ -208,7 +208,7 @@ const App: React.FC = () => {
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 z-30 bg-[#0a0a1a]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
           >
-            {['Innovations', 'About Us', 'Boarding'].map((item) => (
+            {['Innovations', 'Our Mission', 'Boarding'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
@@ -219,7 +219,7 @@ const App: React.FC = () => {
             ))}
             
             <div className="absolute bottom-10 flex gap-6">
-               <a href="#" className="text-white/50 hover:text-white transition-colors">Manifesto</a>
+               <a href="#" className="text-white/50 hover:text-white transition-colors">About Us</a>
             </div>
           </motion.div>
         )}
@@ -292,7 +292,7 @@ const App: React.FC = () => {
                   <span key={i} className="text-3xl md:text-7xl font-heading font-black px-8 flex items-center gap-4">
                     ATMOSPHERIC TECH <span className="text-black/50 text-2xl md:text-4xl">◈</span> 
                     DIGITAL ASCENSION <span className="text-black/50 text-2xl md:text-4xl">◈</span> 
-                    FUTURE ROOTS <span className="text-black/50 text-2xl md:text-4xl">◈</span>
+                    AFROFUTURISM <span className="text-black/50 text-2xl md:text-4xl">◈</span>
                   </span>
                 ))}
               </div>
@@ -370,11 +370,25 @@ const App: React.FC = () => {
               </p>
               
               <div className="space-y-6 md:space-y-8">
-                {[
-                { icon: Globe, title: 'Knowledge is Power', desc: 'Demystifying technology through innovation and education, ensuring the next generation is ready to build the future.' },
-                { icon: Shield, title: 'Sovereign Data', desc: 'Your data belongs to you. We implement decentralized technologies to ensure your digital footprint remains privately owned.' },
-                { icon: Zap, title: 'Creative Guardianship', desc: 'Protecting the soul of art. We use immutable ownership protocols to ensure creatives retain control and value over their creations.' },
-                ].map((feature, i) => (
+                {// This replaces the existing array within the "About Us" section component:
+// <div className="space-y-6 md:space-y-8"> ... </div>
+[
+  { 
+    icon: Globe, 
+    title: 'Knowledge is Power', 
+    desc: 'Demystifying technology through innovative education and our proprietary LMS, Saturn, ensuring the next generation is ready to build the future.',
+  },
+  { 
+    icon: Shield, 
+    title: 'Sovereign Data Protocols', 
+    desc: 'Your data belongs to you. We utilize DApp technology and immutable architecture to ensure your digital identity and assets remain privately owned.', 
+  },
+  { 
+    icon: Zap, 
+    title: 'AI-Powered Module Suite', 
+    desc: 'Protecting the soul of art and innovation. We are developers of six proprietary AI and DApp applications, engineered for transformative, user-owned utility.', 
+  },
+].map((feature, i) => (
                   <div
                     key={i} 
                     className="flex items-start gap-6"
