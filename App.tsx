@@ -539,8 +539,9 @@ const App: React.FC = () => {
       <footer className="relative z-10 border-t border-white/10 py-12 md:py-16 bg-black backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div>
+              <span className="text-xs align-top text-[#00E5CC]">    The</span>
              <div className="font-heading text-3xl md:text-4xl font-bold tracking-tighter mb-4 text-white flex items-center gap-2">
-               CLOUDSHIP <span className="text-xs align-top text-[#00E5CC]">Enterprise</span>
+            Cloudship <span className="text-xs align-top text-[#00E5CC]">Enterprise</span>
              </div>
              <div className="flex gap-2 text-xs font-mono text-gray-400">
                <span>Building the Future since 2011</span>
